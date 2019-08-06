@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cr.zshop.dao.ProductTypeDao">
+
+	<sql id="select"> SELECT id,name,status FROM t_product_type</sql>
+	<sql id="insert"> INSERT INTO t_product_type(name,status)</sql>
+	<sql id="update"> UPDATE t_product_type</sql>
+    <sql id="delete">DELETE FROM t_product_type</sql>
+    <!--选择全部商品类型-->
+	<select id="selectAll" resultType="ProductType">
+		<include refid="select"/>
+	</select>
+	<!--选择id对应的商品类型-->
+	<select id="selectById" resultType="ProductType">
+		<include refid="select"/>
+		WHERE
+			id = #{id}
+	</select>
+	<!--选择名称对应的商品类型-->
+	<select id="selectByName" resultType="ProductType">
+		<include refid="select"/>
+		WHERE
+			name = #{name}
+	</select>
+    <!--选择选择指定状态（启用或禁用）的商品类型-->
+    <select id="selectByStatus" resultType="ProductType">
+        <include refid="select"/>
+        WHERE
+          status = #{status}
+    </select>
+	<!--添加商品类型-->
+	<insert id="insert">
+		<include refid="insert"/>
+		VALUES
+			(#{name},#{status})
+	</insert>
+	<!--更改id对应的商品类型名称-->
+	<update id="updateName">
+		<include refid="update"/>
+		SET
+			name =#{name}
+		WHERE
+			id = #{id}
+	</update>
+	<!--更改id对应的商品类型状态-->
+	<update id="updateStatus">
+		<include refid="update"/>
+		SET
+			status =#{status}
+		WHERE
+			id = #{id}
+	</update>
+    <!--删除id对应的商品类型-->
+	<delete id="deleteById">
+		<include refid="delete"/>
+		WHERE
+				id = #{id}
+	</delete>
+</mapper>

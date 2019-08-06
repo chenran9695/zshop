@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:26 +0800] "GET / HTTP/1.1" 200 4776 http-bio-9001-exec-2 1299
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:26 +0800] "GET /css/mycss.css HTTP/1.1" 200 1573 http-bio-9001-exec-1 80
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:26 +0800] "GET /css/bootstrap.min.css HTTP/1.1" 200 121205 http-bio-9001-exec-3 81
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:26 +0800] "GET /css/zshop.css HTTP/1.1" 200 316 http-bio-9001-exec-4 68
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:26 +0800] "GET /css/bootstrapValidator.min.css HTTP/1.1" 200 484 http-bio-9001-exec-5 74
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:26 +0800] "GET /js/bootstrap.min.js HTTP/1.1" 200 37051 http-bio-9001-exec-7 193
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:27 +0800] "GET /js/jquery.min.js HTTP/1.1" 200 95997 http-bio-9001-exec-6 352
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:27 +0800] "GET /layer/layer.js HTTP/1.1" 200 22116 http-bio-9001-exec-10 252
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:27 +0800] "GET /js/bootstrapValidator.min.js HTTP/1.1" 200 89085 http-bio-9001-exec-9 345
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:27 +0800] "GET /images/backimage.jpg HTTP/1.1" 200 203417 http-bio-9001-exec-1 24
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:27 +0800] "GET /layer/theme/default/layer.css?v=3.1.1 HTTP/1.1" 200 14367 http-bio-9001-exec-5 26
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:28 +0800] "GET /back/verificationCode/create HTTP/1.1" 200 1434 http-bio-9001-exec-2 1481
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:28 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-9001-exec-2 5
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:43 +0800] "GET /fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028 http-bio-9001-exec-2 36
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:50 +0800] "POST /back/verificationCode/check HTTP/1.1" 200 14 http-bio-9001-exec-7 36
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:51 +0800] "POST /back/admin/login HTTP/1.1" 200 4830 http-bio-9001-exec-7 533
+0:0:0:0:0:0:0:1 - - [03/Jul/2019:17:23:51 +0800] "GET /back/verificationCode/create HTTP/1.1" 200 1434 http-bio-9001-exec-7 27

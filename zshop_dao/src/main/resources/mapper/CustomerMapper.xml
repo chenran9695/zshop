@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cr.zshop.dao.CustomerDao">
+    <sql id="customerColumn">
+        id,name,login_name,phone,is_valid,regist_date
+    </sql>
+    <select id="selectByAccount" resultType="Customer">
+        select <include refid="customerColumn"/>
+        from t_customer
+        where login_name =#{loginName} and password = #{password} and is_valid=#{isValid}
+    </select>
+
+    <select id="selectByPhone" resultType="Customer">
+        select <include refid="customerColumn"/>
+        from t_customer
+        where phone = #{phone}
+    </select>
+</mapper>

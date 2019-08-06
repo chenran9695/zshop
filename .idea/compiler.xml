@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zshop_backweb" />
+        <module name="zshop_common" />
+        <module name="zshop_dao" />
+        <module name="zshop_frontweb" />
+        <module name="zshop_pojo" />
+        <module name="zshop_service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zshop_backweb" target="11" />
+      <module name="zshop_common" target="11" />
+      <module name="zshop_dao" target="11" />
+      <module name="zshop_frontweb" target="11" />
+      <module name="zshop_parent" target="11" />
+      <module name="zshop_pojo" target="11" />
+      <module name="zshop_service" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

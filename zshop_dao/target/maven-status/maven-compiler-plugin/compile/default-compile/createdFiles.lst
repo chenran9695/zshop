@@ -1,0 +1,6 @@
+com\cr\zshop\dao\AdminDao.class
+com\cr\zshop\dao\RoleDao.class
+com\cr\zshop\params\ProductParams.class
+com\cr\zshop\params\AdminParams.class
+com\cr\zshop\dao\CustomerDao.class
+com\cr\zshop\dao\ProductDao.class

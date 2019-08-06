@@ -1,0 +1,9 @@
+com\cr\zshop\common\util\StringUtils.class
+com\cr\zshop\common\exception\CustomerNotFoundException.class
+com\cr\zshop\common\exception\AdminNotFoundException.class
+com\cr\zshop\common\constant\AdminConstant.class
+com\cr\zshop\common\util\HttpClientUtils.class
+com\cr\zshop\common\util\ResponseResult.class
+com\cr\zshop\common\constant\CustomerConstant.class
+com\cr\zshop\common\constant\ProductTypeConstant.class
+com\cr\zshop\common\constant\ResponseResultConstant.class

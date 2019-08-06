@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zshop_backweb:war">
+    <output-path>$PROJECT_DIR$/zshop_backweb/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>zshop_backweb</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="zshop_backweb.war">
+      <element id="artifact" artifact-name="zshop_backweb:war exploded" />
+    </root>
+  </artifact>
+</component>
