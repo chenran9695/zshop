@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <bean id = "poolConfig" class="redis.clients.jedis.JedisPoolConfig">
         <property name="maxTotal" value="50"/>
         <property name="maxIdle" value="5"/>
@@ -15,5 +16,5 @@
         <constructor-arg name="port" value="6379"/>
     </bean>
 
-    <bean class="com.cr.zshop.jedis.SpringBeanHolder"/>
+    <bean class="com.cr.zshop.common.util.SpringBeanHolder"/>
 </beans>

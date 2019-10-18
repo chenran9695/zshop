@@ -65,6 +65,8 @@ public class SmsController {
 
             //创造6位随机验证码
             verificationCode = String.valueOf(new Random().nextInt(899999)+10000);
+            //改为Redis
+
             session.setAttribute("verificationCode",verificationCode);
 
             //为请求参数赋值
