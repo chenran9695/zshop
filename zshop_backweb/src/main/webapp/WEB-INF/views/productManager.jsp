@@ -28,8 +28,8 @@
             });
 
             //服务器提示信息
-            let successMsg = '${successMsg}';
-            let errorMsg = '${errorMsg}';
+            var successMsg = '${successMsg}';
+            var errorMsg = '${errorMsg}';
             if(successMsg !=''){
                 layer.msg(successMsg,{
                     time:2000

@@ -10,9 +10,7 @@ import com.cr.zshop.params.AdminParams;
 import com.cr.zshop.pojo.Admin;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.ListIterator;
 
 public interface AdminDao {
     /**

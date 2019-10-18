@@ -16,7 +16,9 @@ public class Customer {
     private String password;
     private String phone;
     private Integer isValid;
-    private Date registDate;
+    private Date registerDate;
+    private String address;
+
 
     public Integer getId() {
         return id;
@@ -66,11 +68,77 @@ public class Customer {
         this.isValid = isValid;
     }
 
-    public Date getRegistDate() {
-        return registDate;
+    public Date getRegisterDate() {
+        return registerDate;
     }
 
-    public void setRegistDate(Date registDate) {
-        this.registDate = registDate;
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    //构建器实现
+    public static class Builder{
+        private Integer id;
+        private String name;
+        private String loginName;
+        private String password;
+        private String phone;
+        private Integer isValid;
+        private Date registerDate;
+        private String address;
+
+        public Builder id(Integer id){
+            this.id = id;
+            return this;
+        }
+        public Builder name(String name){
+            this.name = name;
+            return this;
+        }
+        public Builder loginName(String loginName){
+            this.loginName = loginName;
+            return this;
+        }
+        public Builder password(String password){
+            this.password = password;
+            return this;
+        }
+        public Builder phone(String phone){
+            this.phone = phone;
+            return this;
+        }
+        public Builder isValid(Integer isValid){
+            this.isValid = isValid;
+            return this;
+        }
+        public Builder registerDate(Date registerDate){
+            this.registerDate = registerDate;
+            return this;
+        }
+        public Builder address(String address){
+            this.address = address;
+            return this;
+        }
+        public Customer build(){
+            return new Customer(this);
+        }
+    }
+    private Customer(Builder builder){
+        this.id = builder.id;
+        this.name = builder.name;
+        this.loginName = builder.loginName;
+        this.password = builder.password;
+        this.phone = builder.phone;
+        this.isValid = builder.isValid;
+        this.registerDate = builder.registerDate;
+        this.address = builder.address;
     }
 }

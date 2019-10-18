@@ -172,6 +172,7 @@
 	  <version>${jedis.version}</version>
 	</dependency>
 
+
   </dependencies>
   </dependencyManagement>
   

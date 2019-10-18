@@ -31,7 +31,7 @@ public class ProductTypeExistException extends Exception {
 	        super(cause);
 	    }
 
-	    protected ProductTypeExistException(String message, Throwable cause,
+	    public ProductTypeExistException(String message, Throwable cause,
 	                        boolean enableSuppression,
 	                        boolean writableStackTrace) {
 	        super(message, cause, enableSuppression, writableStackTrace);

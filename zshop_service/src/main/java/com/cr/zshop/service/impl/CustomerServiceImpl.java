@@ -1,6 +1,7 @@
 package com.cr.zshop.service.impl;
 
 import com.cr.zshop.common.constant.CustomerConstant;
+import com.cr.zshop.common.exception.CustomerExistException;
 import com.cr.zshop.common.exception.CustomerNotFoundException;
 import com.cr.zshop.dao.CustomerDao;
 import com.cr.zshop.pojo.Customer;
@@ -45,5 +46,14 @@ public class CustomerServiceImpl implements CustomerService {
         else{
             throw new CustomerNotFoundException("该手机号未注册！");
         }
+    }
+
+    @Override
+    public void register(Customer customer) throws CustomerExistException {
+        Customer customer1 = customerDao.selectByColumn("login_name",customer.getLoginName());
+        if(!ObjectUtils.isEmpty(customer1)){
+            throw new CustomerExistException("用户已经存在！");
+        }
+        customerDao.insertCustomer(customer);
     }
 }

@@ -20,4 +20,20 @@ public interface CustomerDao {
      * @return com.cr.zshop.pojo.Customer
      */
     Customer selectByPhone(String phone);
+    /**
+     * create by: cr
+     * description: 添加用户
+     * create time: 2019/8/17 16:34
+     * params: [customer]
+     * @return void
+     */
+    void insertCustomer(Customer customer);
+    /**
+     * create by: cr
+     * description: 通过列名查询
+     * create time: 2019/8/17 17:57
+     * params:
+     * @return
+     */
+    Customer selectByColumn(@Param("column") String column, @Param("value") String value);
 }

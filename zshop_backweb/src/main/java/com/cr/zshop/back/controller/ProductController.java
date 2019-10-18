@@ -47,7 +47,7 @@ public class ProductController {
 
     @RequestMapping("/findAll")
     public String findAll(Integer pageNum,Model model){
-
+        //如果未指定查询，则返回第一页
         if(ObjectUtils.isEmpty(pageNum))
         {
             pageNum = PaginationConstant.PAGE_NUM;
@@ -69,15 +69,8 @@ public class ProductController {
      */
     @RequestMapping("/add")
     public String add(ProductVo productVo, HttpSession session, Model model,Integer pageNum) {
-        String uploadPath = session.getServletContext().getRealPath("/WEB-INF/upload");
-
         try {
-
-            ProductDto productDto = new ProductDto();
-            PropertyUtils.copyProperties(productDto, productVo);
-            productDto.setInputStream(productVo.getFile().getInputStream());
-            productDto.setFileName(productVo.getFile().getOriginalFilename());
-            productDto.setUploadPath(uploadPath);
+            ProductDto productDto = updateProductInfo(productVo,session);
             productService.add(productDto);
             model.addAttribute("successMsg", "修改成功");
         } catch (Exception e) {
@@ -140,13 +133,8 @@ public class ProductController {
     */
     @RequestMapping("/modify")
     public String modify(ProductVo productVo, HttpSession session, Model model,Integer pageNum) {
-        String uploadPath = session.getServletContext().getRealPath("/WEB-INF/upload");
         try {
-            ProductDto productDto = new ProductDto();
-            PropertyUtils.copyProperties(productDto, productVo);
-            productDto.setInputStream(productVo.getFile().getInputStream());
-            productDto.setFileName(productVo.getFile().getOriginalFilename());
-            productDto.setUploadPath(uploadPath);
+            ProductDto productDto = updateProductInfo(productVo,session);
             productService.modify(productDto);
             model.addAttribute("successMsg", "修改成功");
         } catch (Exception e) {
@@ -165,5 +153,24 @@ public class ProductController {
     public String removeById(Integer id,Integer pageNum){
         productService.remove(id);
         return "forward:findAll?pageNum="+pageNum;
+    }
+
+    /**
+     * create by: cr
+     * description: 更新商品信息
+     * create time: 2019/8/16 9:45
+     * params:
+     * @return
+     */
+    private ProductDto updateProductInfo(ProductVo productVo,HttpSession session) throws Exception{
+        String uploadPath = session.getServletContext().getRealPath("/WEB-INF/upload");
+
+        ProductDto productDto = new ProductDto();
+        PropertyUtils.copyProperties(productDto, productVo);
+        productDto.setInputStream(productVo.getFile().getInputStream());
+        productDto.setFileName(productVo.getFile().getOriginalFilename());
+        productDto.setUploadPath(uploadPath);
+
+        return productDto;
     }
 }

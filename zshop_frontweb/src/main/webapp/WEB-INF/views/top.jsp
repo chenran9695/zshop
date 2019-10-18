@@ -5,9 +5,10 @@
   Time: 17:22
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="${pageContext.request.contextPath}/layer/layer.js"></script>
+<script src="${pageContext.request.contextPath}/js/template.js"></script>
 <%--模板1 已登录状态下显示--%>
 <script type="text/html" id="welcome">
     <li class="userName">
@@ -127,19 +128,32 @@
             }
         )
     }
+    //注册
+    function register() {
+        $.post(
+            '${pageContext.request.contextPath}/front/customer/register',
+            $('#registerForm').serialize(),function (result) {
+                //显示反馈信息
+                layer.msg(result.message,{time:1000});
+                //清空模态框
+                $('#resetButton').trigger('click');
+                //注册成功，则隐藏注册模态框
+                if(result.status == 1){
+                    $('#registModal').modal('hide');
+
+                }
+            }
+        )
+    }
 </script>
 <!-- navbar start -->
 <div class="navbar navbar-default clear-bottom">
     <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand logo-style">
-                <img class="brand-img" src="${pageContext.request.contextPath}/images/com-logo1.png" alt="logo" height="70">
-            </a>
-        </div>
+
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav" >
                 <li class="active">
-                    <a href="#">商城主页</a>
+                    <a href="${pageContext.request.contextPath}/front/product/search">商城主页</a>
                 </li>
                 <li>
                     <a href="myOrders.html">我的订单</a>
@@ -276,43 +290,43 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabelz">会员注册</h4>
             </div>
-            <form action="" class="form-horizontal" method="post">
+            <form id="registerForm" action="" class="form-horizontal" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="col-sm-3 control-label">用户姓名:</label>
                         <div class="col-sm-6">
-                            <input class="form-control" type="text">
+                            <input class="form-control" type="text" name="name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">登陆账号:</label>
                         <div class="col-sm-6">
-                            <input class="form-control" type="text">
+                            <input class="form-control" type="text" name="loginName">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">登录密码:</label>
                         <div class="col-sm-6">
-                            <input class="form-control" type="password">
+                            <input class="form-control" type="password" name="password">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">联系电话:</label>
                         <div class="col-sm-6">
-                            <input class="form-control" type="text">
+                            <input class="form-control" type="text" name="phone">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">联系地址:</label>
                         <div class="col-sm-6">
-                            <input class="form-control" type="text">
+                            <input class="form-control" type="text" name="address">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">关&nbsp;&nbsp;闭</button>
-                    <button type="reset" class="btn btn-warning">重&nbsp;&nbsp;置</button>
-                    <button type="submit" class="btn btn-warning">注&nbsp;&nbsp;册</button>
+                    <button type="reset" id= "resetButton" class="btn btn-warning">重&nbsp;&nbsp;置</button>
+                    <button type="button" class="btn btn-warning" onclick="register()">注&nbsp;&nbsp;册</button>
                 </div>
             </form>
         </div>

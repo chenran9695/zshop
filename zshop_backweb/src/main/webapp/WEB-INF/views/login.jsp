@@ -85,7 +85,7 @@
       <div class="panel panel-primary div-shadow">
       	<!-- h3标签加载自定义样式，完成文字居中和上下间距调整 -->
 	    <div class="panel-heading">
-	    	<h3>在线商城系统 3.0</h3>
+	    	<h3>在线商城系统</h3>
 	    	<span>ZSHOP Manager System</span>
 	    </div>
 	    <div class="panel-body">
@@ -136,14 +136,5 @@
 	    </div>
 	  </div>
     </div>
-    <!-- 页尾 版权声明 -->
-    <div class="container">
-		<div class="col-sm-12 foot-css">
-		        <p class="text-muted credit">
-		            Copyright 南京网博 版权所有
-		        </p>
-	    </div>
-    </div>
-  
   </body>
 </html>

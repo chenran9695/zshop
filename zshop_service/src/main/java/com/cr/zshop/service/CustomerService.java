@@ -1,5 +1,6 @@
 package com.cr.zshop.service;
 
+import com.cr.zshop.common.exception.CustomerExistException;
 import com.cr.zshop.common.exception.CustomerNotFoundException;
 import com.cr.zshop.pojo.Customer;
 
@@ -20,4 +21,12 @@ public interface CustomerService {
      * @return com.cr.zshop.pojo.Customer
      */
     Customer findByPhone(String phone) throws CustomerNotFoundException;
+    /**
+     * create by: cr
+     * description: 注册用户
+     * create time: 2019/8/17 16:29
+     * params:
+     * @return
+     */
+    void register(Customer customer) throws CustomerExistException;
 }

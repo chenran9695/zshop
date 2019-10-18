@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html lang="zh">
@@ -140,7 +140,7 @@
                 {'id':id},
                 function (result) {
                     if(result.status = 1){
-                        let $td = $(btn).parent().prev();
+                        var $td = $(btn).parent().prev();
                         if($td.text().trim() == '启用'){
                             $td.text('禁用');
                             $(btn).val('启用').removeClass("btn-success").addClass('btn-danger');

@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cr.zshop.dao.CustomerDao">
     <sql id="customerColumn">
-        id,name,login_name,phone,is_valid,regist_date
+        id,name,login_name,phone,is_valid,register_date,address
     </sql>
     <select id="selectByAccount" resultType="Customer">
         select <include refid="customerColumn"/>
@@ -15,5 +15,16 @@
         select <include refid="customerColumn"/>
         from t_customer
         where phone = #{phone}
+    </select>
+    
+    <insert id="insertCustomer" parameterType="Customer">
+        insert into t_customer(name, login_name, password, phone, is_valid, register_date,address)
+        values (#{name},#{loginName},#{password},#{phone},#{isValid},#{registerDate},#{address})
+    </insert>
+
+    <select id="selectByColumn" resultType="Customer">
+        select <include refid="customerColumn"/>
+        from t_customer
+        where ${column} = #{value}
     </select>
 </mapper>

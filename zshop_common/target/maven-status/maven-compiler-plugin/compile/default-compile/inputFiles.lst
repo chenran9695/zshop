@@ -3,6 +3,7 @@ C:\Users\67013\IdeaProjects\zshop_parent\zshop_common\src\main\java\com\cr\zshop
 C:\Users\67013\IdeaProjects\zshop_parent\zshop_common\src\main\java\com\cr\zshop\common\util\ResponseResult.java
 C:\Users\67013\IdeaProjects\zshop_parent\zshop_common\src\main\java\com\cr\zshop\common\constant\CustomerConstant.java
 C:\Users\67013\IdeaProjects\zshop_parent\zshop_common\src\main\java\com\cr\zshop\common\constant\ResponseResultConstant.java
+C:\Users\67013\IdeaProjects\zshop_parent\zshop_common\src\main\java\com\cr\zshop\common\exception\CustomerExistException.java
 C:\Users\67013\IdeaProjects\zshop_parent\zshop_common\src\main\java\com\cr\zshop\common\exception\AdminNotFoundException.java
 C:\Users\67013\IdeaProjects\zshop_parent\zshop_common\src\main\java\com\cr\zshop\common\util\StringUtils.java
 C:\Users\67013\IdeaProjects\zshop_parent\zshop_common\src\main\java\com\cr\zshop\common\constant\ProductTypeConstant.java

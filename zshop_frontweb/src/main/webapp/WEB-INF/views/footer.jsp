@@ -8,6 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- footers start -->
 <div class="footers">
-    版权所有：南京网博
+
 </div>
 <!-- footers end -->

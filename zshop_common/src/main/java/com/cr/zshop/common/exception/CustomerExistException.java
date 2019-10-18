@@ -7,5 +7,8 @@ package com.cr.zshop.common.exception;
  * @modified By：cr
  * @version: $
  */
-public class CustomerExistException {
+public class CustomerExistException extends Exception{
+    public CustomerExistException(String message) {
+        super(message);
+    }
 }

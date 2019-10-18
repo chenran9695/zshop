@@ -12,7 +12,11 @@ import com.cr.zshop.vo.AdminVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.ObjectUtils;
@@ -21,8 +25,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import com.cr.zshop.pojo.Role;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.http.HttpSession;
 
@@ -91,7 +97,6 @@ public class AdminController
 		List<Admin> admins = adminService.findAll();
 		PageInfo<Admin> pageInfo = new PageInfo<>(admins);
 		model.addAttribute("pageInfo",pageInfo);
-		
 		return "adminManager";
 	}
 	/**

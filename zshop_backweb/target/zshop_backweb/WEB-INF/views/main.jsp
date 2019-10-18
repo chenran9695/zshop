@@ -23,10 +23,10 @@
         $("#product-set").click(function() {
             $("#frame-id").attr("src", "${pageContext.request.contextPath}/back/product/findAll");
         });
-            //切换至客户管理页面
-        $("#user-set").click(function() {
+            //切换至客户管理页面,未实现
+       /* $("#user-set").click(function() {
             $("#frame-id").attr("src", "customerManager.html");
-        });
+        });*/
             //切换至管理员管理页面
         $("#manager-set").click(function() {
             $("#frame-id").attr("src", "${pageContext.request.contextPath}/back/admin/findAll");
@@ -82,7 +82,7 @@
     </div>
     <!-- footers start -->
     <div class="footer">
-        版权所有：南京网博
+
     </div>
     <!-- footers end -->
 </body>

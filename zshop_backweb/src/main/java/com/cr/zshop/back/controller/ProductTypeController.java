@@ -36,18 +36,7 @@ public class ProductTypeController {
 	private ProductTypeService productTypeService;
 	@RequestMapping("/findAll")
 	public String findAll(Integer pageNum,Model model) {
-       /* List<ProductType> productTypes = productTypeService.findALL();
-        int pages = productTypes.size()/PaginationConstant.PAGE_SIZE;
-        if(productTypes.size()%PaginationConstant.PAGE_SIZE != 0){
-            pages++;
-        }
 
-		//�ж��Ƿ���ҳ����Ϣ
-		if(ObjectUtils.isEmpty(pageNum)){
-				pageNum = PaginationConstant.PAGE_NUM;
-			}else if(pageNum>pages){
-		    pageNum = pages;
-        }*/
 		if(ObjectUtils.isEmpty(pageNum)) {
 			pageNum = PaginationConstant.PAGE_NUM;
 		}
