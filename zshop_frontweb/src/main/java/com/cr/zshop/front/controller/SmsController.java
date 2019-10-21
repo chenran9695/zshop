@@ -3,6 +3,7 @@ package com.cr.zshop.front.controller;
 import com.cr.zshop.common.constant.ResponseResultConstant;
 import com.cr.zshop.common.exception.CustomerNotFoundException;
 import com.cr.zshop.common.util.HttpClientUtils;
+import com.cr.zshop.common.util.RedisUtils;
 import com.cr.zshop.common.util.ResponseResult;
 import com.cr.zshop.pojo.Customer;
 import com.cr.zshop.service.CustomerService;
@@ -66,8 +67,9 @@ public class SmsController {
             //创造6位随机验证码
             verificationCode = String.valueOf(new Random().nextInt(899999)+10000);
             //改为Redis
-
-            session.setAttribute("verificationCode",verificationCode);
+            RedisUtils.set(session.getId()+phone,verificationCode,60*3);
+            //改用上述Redis
+            //   session.setAttribute("verificationCode",verificationCode);
 
             //为请求参数赋值
             Map<String,String> params = new HashMap<>();
@@ -101,7 +103,9 @@ public class SmsController {
     @ResponseBody
     public ResponseResult login(String phone,String verificationCode,HttpSession session){
         ResponseResult responseResult = new ResponseResult();
-        String code = (String)session.getAttribute("verificationCode");
+        //改用Redis
+        //String code = (String)session.getAttribute("verificationCode");
+        String code = RedisUtils.get(session.getId()+phone);
         try {
             //未输入验证码
             if(ObjectUtils.isEmpty(verificationCode)){
